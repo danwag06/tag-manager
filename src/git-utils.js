@@ -3,7 +3,6 @@ const { execSync } = require("child_process");
 const getGitBranches = () => {
   try {
     const output = execSync("git branch -a", { encoding: "utf8" });
-    console.log(output.split("\n").map((branch) => branch.trim()));
     return output
       .split("\n")
       .map((branch) => branch.trim())
