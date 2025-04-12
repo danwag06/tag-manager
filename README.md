@@ -1,6 +1,6 @@
-# Tag Manager
+# Wags Tags
 
-A tool for creating consistent tagged releases that follow semantic versioning.
+A simple tool for creating consistent tagged releases that follow semantic versioning.
 
 ## Features
 
@@ -13,7 +13,7 @@ A tool for creating consistent tagged releases that follow semantic versioning.
 ## Installation
 
 ```bash
-npm install tag-manager
+npm install wags-tags
 ```
 
 ## Quick Start
@@ -21,42 +21,42 @@ npm install tag-manager
 1. **Configure your repository**:
 
 ```bash
-npx tag-manager --config
+npx wags-tags --config
 # or
-npx tag-manager -config
+npx wags-tags -config
 ```
 
 2. **Create a patch release**:
 
 ```bash
-npx tag-manager
+npx wags-tags
 # or
-npx tag-manager -patch
+npx wags-tags -patch
 ```
 
 3. **Create a minor release**:
 
 ```bash
-npx tag-manager -minor
+npx wags-tags -minor
 ```
 
 4. **Create a major release**:
 
 ```bash
-npx tag-manager -major
+npx wags-tags -major
 ```
 
 5. **Create a pre-release**:
 
 ```bash
-npx tag-manager --pre-release
+npx wags-tags --pre-release
 # or
-npx tag-manager -pr
+npx wags-tags -pr
 ```
 
 ## How It Works
 
-Tag Manager helps maintain consistent versioning across multiple environments:
+Wags Tags helps maintain consistent versioning across multiple environments:
 
 1. **Branch-to-Environment Mapping**: Maps Git branches to logical environments (dev, qa, staging, prod)
 2. **Intelligent Versioning**: Determines the next version number based on semantic versioning rules
@@ -73,7 +73,7 @@ Tag Manager helps maintain consistent versioning across multiple environments:
 
 ## Configuration
 
-The configuration is stored in a `.tag-manager.json` file in your project root:
+The configuration is stored in a `.wags-tags.json` file in your project root:
 
 ```json
 {

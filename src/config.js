@@ -29,7 +29,7 @@ const DEFAULT_CONFIG = {
 
 class ConfigManager {
   constructor() {
-    this.configPath = path.join(process.cwd(), ".tag-manager.json");
+    this.configPath = path.join(process.cwd(), ".wags-tags.json");
     this.config = this.loadConfig();
   }
 

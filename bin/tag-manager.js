@@ -23,7 +23,7 @@ async function setupConfig() {
           "  1. Initialized a Git repository (git init)\n" +
           "  2. Added a remote repository (git remote add origin <url>)\n" +
           "  3. Created at least one branch\n\n" +
-          "After setting up your repository, run 'npx tag-manager' again."
+          "After setting up your repository, run 'npx wags-tags' again."
       );
       return;
     }

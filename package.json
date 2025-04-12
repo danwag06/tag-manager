@@ -1,12 +1,12 @@
 {
-  "name": "tag-manager",
+  "name": "wags-tags",
   "version": "0.0.1",
   "description": "Tool used to create consistent tagged releases that follow semantic versioning.",
   "license": "ISC",
   "type": "commonjs",
   "main": "src/index.js",
   "bin": {
-    "tag-manager": "bin/tag-manager.js"
+    "wags-tags": "bin/tag-manager.js"
   },
   "scripts": {
     "test": "jest",
