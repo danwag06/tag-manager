@@ -6,7 +6,7 @@
   "type": "commonjs",
   "main": "src/index.js",
   "bin": {
-    "tag-manager": "./bin/tag-manager.js"
+    "tag-manager": "bin/tag-manager.js"
   },
   "scripts": {
     "test": "jest",

@@ -1,6 +1,6 @@
 # Tag Manager
 
-A powerful tool for creating consistent tagged releases that follow semantic versioning.
+A tool for creating consistent tagged releases that follow semantic versioning.
 
 ## Features
 
