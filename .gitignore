@@ -1,0 +1,14 @@
+/node_modules
+/dist
+/coverage
+/build
+
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore all files that end with .tgz
+*.tgz
+

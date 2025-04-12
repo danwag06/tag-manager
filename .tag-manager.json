@@ -1,0 +1,9 @@
+{
+  "environments": [
+    {
+      "name": "prod",
+      "branch": "main",
+      "isProduction": true
+    }
+  ]
+}
