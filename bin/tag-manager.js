@@ -124,7 +124,11 @@ async function createRelease(incrementType = "patch", preRelease = false) {
   try {
     // Get current branch and latest tag
     const currentBranch = getCurrentBranch();
-    const latestTag = getLatestTag(currentBranch);
+    const envConfig = config.loadConfig();
+    const environment = envConfig.environments.find(
+      (env) => env.branch === currentBranch
+    );
+    const latestTag = getLatestTag(environment?.name);
 
     let preReleaseType = null;
     if (preRelease) {
@@ -201,7 +205,9 @@ async function createRelease(incrementType = "patch", preRelease = false) {
       {
         type: "confirm",
         name: "finalConfirm",
-        message: `Current version: ${latestTag}\nAbout to create tags:\n  - ${immutableTag} (immutable)\n  - ${mutableTag} (mutable)\n\nProceed?`,
+        message: latestTag
+          ? `Current version: ${latestTag}\nAbout to create tags:\n  - ${immutableTag} (immutable)\n  - ${mutableTag} (mutable)\n\nProceed?`
+          : `This appears to be the first tag for this branch.\nAbout to create tags:\n  - ${immutableTag} (immutable)\n  - ${mutableTag} (mutable)\n\nProceed?`,
         default: false,
       },
     ]);
