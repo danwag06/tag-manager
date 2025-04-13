@@ -201,7 +201,7 @@ async function createRelease(incrementType = "patch", preRelease = false) {
       {
         type: "confirm",
         name: "finalConfirm",
-        message: `About to create tags:\n  - ${immutableTag} (immutable)\n  - ${mutableTag} (mutable)\n\nProceed?`,
+        message: `Current version: ${latestTag}\nAbout to create tags:\n  - ${immutableTag} (immutable)\n  - ${mutableTag} (mutable)\n\nProceed?`,
         default: false,
       },
     ]);
