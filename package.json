@@ -1,6 +1,6 @@
 {
   "name": "wags-tags",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Tool used to create consistent tagged releases that follow semantic versioning.",
   "license": "ISC",
   "type": "commonjs",

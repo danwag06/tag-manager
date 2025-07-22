@@ -22,8 +22,6 @@ npm install wags-tags
 
 ```bash
 npx wags-tags --config
-# or
-npx wags-tags -config
 ```
 
 2. **Create a patch release**:
@@ -58,11 +56,11 @@ npx wags-tags -pr
 
 Wags Tags helps maintain consistent versioning across multiple environments:
 
-1. **Branch-to-Environment Mapping**: Maps Git branches to logical environments (dev, qa, staging, prod)
+1. **Branch-to-Environment Mapping**: Maps Git branches to logical environments (development, qa, staging, production)
 2. **Intelligent Versioning**: Determines the next version number based on semantic versioning rules
 3. **Dual Tagging**: Creates two types of tags:
    - **Immutable tags**: Specific version tags (e.g., v1.2.3-dev, v1.0.0-alpha)
-   - **Mutable tags**: Environment tags that always point to latest (e.g., dev, qa, latest)
+   - **Mutable tags**: Environment tags that always point to latest (e.g., dev, qa, stg, latest)
 
 ## Tag Formats
 

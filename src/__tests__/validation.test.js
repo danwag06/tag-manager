@@ -60,6 +60,24 @@ describe("validateTag", () => {
           isProdPrerelease: false,
         },
       ],
+      [
+        "v1.0.0-dev-beta",
+        {
+          versionOnly: "1.0.0",
+          env: "dev",
+          isProd: false,
+          isProdPrerelease: false,
+        },
+      ],
+      [
+        "v1.0.0-dev-rc",
+        {
+          versionOnly: "1.0.0",
+          env: "dev",
+          isProd: false,
+          isProdPrerelease: false,
+        },
+      ],
       // QA cases
       [
         "v1.0.0-qa",
@@ -79,6 +97,24 @@ describe("validateTag", () => {
           isProdPrerelease: false,
         },
       ],
+      [
+        "v1.0.0-qa-beta",
+        {
+          versionOnly: "1.0.0",
+          env: "qa",
+          isProd: false,
+          isProdPrerelease: false,
+        },
+      ],
+      [
+        "v1.0.0-qa-rc",
+        {
+          versionOnly: "1.0.0",
+          env: "qa",
+          isProd: false,
+          isProdPrerelease: false,
+        },
+      ],
       // Staging cases
       [
         "v1.0.0-stg",
@@ -91,6 +127,24 @@ describe("validateTag", () => {
       ],
       [
         "v1.0.0-stg-alpha",
+        {
+          versionOnly: "1.0.0",
+          env: "stg",
+          isProd: false,
+          isProdPrerelease: false,
+        },
+      ],
+      [
+        "v1.0.0-stg-beta",
+        {
+          versionOnly: "1.0.0",
+          env: "stg",
+          isProd: false,
+          isProdPrerelease: false,
+        },
+      ],
+      [
+        "v1.0.0-stg-rc",
         {
           versionOnly: "1.0.0",
           env: "stg",
@@ -139,6 +193,18 @@ describe("validateTag", () => {
         "v0.0.0-prod",
         "❌ Version cannot be 0.0.0 - at least one number must be greater than 0",
       ],
+      [
+        "v0.0.0-alpha",
+        "❌ Version cannot be 0.0.0 - at least one number must be greater than 0",
+      ],
+      [
+        "v0.0.0-beta",
+        "❌ Version cannot be 0.0.0 - at least one number must be greater than 0",
+      ],
+      [
+        "v0.0.0-rc",
+        "❌ Version cannot be 0.0.0 - at least one number must be greater than 0",
+      ],
 
       // Invalid format
       ["v1.0.0-", "❌ Invalid tag format!"],
@@ -147,7 +213,7 @@ describe("validateTag", () => {
       ["v1.0.0-staging", "❌ Invalid tag format!"],
       ["v1.0.0-gamma", "❌ Invalid tag format!"],
       ["v1.0.0-ALPHA", "❌ Invalid tag format!"],
-      ["v1.0.0-alpha.1", "❌ Invalid tag format!"],
+      ["v1.0.0-alpha.1", "❌ Invalid tag format!"], // TODO: look into if we want to support this. It may overcomplicate existing logic.
       ["v1.0.0-alpha-1", "❌ Invalid tag format!"],
       ["v1.0.0-alpha-beta", "❌ Invalid tag format!"],
       ["v1.0.0-alpha+001", "❌ Invalid tag format!"],

@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-const inquirer = require("inquirer").default;
 const { execSync } = require("child_process");
 const config = require("../src/config");
 const {
@@ -12,8 +11,21 @@ const { getGitBranches } = require("../src/git-utils");
 
 const PRE_RELEASE_TYPES = ["alpha", "beta", "rc"];
 
+// Dynamically import inquirer to handle ES module
+let inquirer;
+async function loadInquirer() {
+  if (!inquirer) {
+    const module = await import("inquirer");
+    inquirer = module.default;
+  }
+  return inquirer;
+}
+
 async function setupConfig() {
   try {
+    // Load inquirer dynamically
+    const inquirer = await loadInquirer();
+    
     // Get list of branches
     const branches = getGitBranches();
 
@@ -122,6 +134,9 @@ async function setupConfig() {
 
 async function createRelease(incrementType = "patch", preRelease = false) {
   try {
+    // Load inquirer dynamically
+    const inquirer = await loadInquirer();
+    
     // Get current branch and latest tag
     const currentBranch = getCurrentBranch();
     const envConfig = config.loadConfig();
