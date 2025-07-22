@@ -87,13 +87,13 @@ const createTag = (version, isMutable = false) => {
     if (isMutable) {
       // For mutable tags, force update existing tag
       execSync(`git tag -f ${version}`, { stdio: "inherit" });
-      execSync(`git push -f origin ${version}`, { stdio: "inherit" });
+      execSync(`git push -f origin refs/tags/${version}`, { stdio: "inherit" });
     } else {
       // For immutable tags, create new tag
       execSync(`git tag -a ${version} -m "Release ${version}"`, {
         stdio: "inherit",
       });
-      execSync(`git push origin ${version}`, { stdio: "inherit" });
+      execSync(`git push origin refs/tags/${version}`, { stdio: "inherit" });
     }
     return true;
   } catch (error) {

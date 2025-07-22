@@ -234,11 +234,11 @@ async function createRelease(incrementType = "patch", preRelease = false) {
 
     // Create and push tags
     execSync(`git tag ${immutableTag}`);
-    execSync(`git push origin ${immutableTag}`);
+    execSync(`git push origin refs/tags/${immutableTag}`);
 
     if (mutableTag) {
       execSync(`git tag -f ${mutableTag}`);
-      execSync(`git push -f origin ${mutableTag}`);
+      execSync(`git push -f origin refs/tags/${mutableTag}`);
     }
 
     console.log("Tags created and pushed successfully!");
